@@ -1,0 +1,256 @@
+
+footer {
+  margin-top: 40px;
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #2980b9;
+}
+
+body.dark-mode footer a {
+  color: #5dade2;
+}
+
+body.dark-mode footer a:hover {
+  color: #3498db;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding: 40px;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #2c3e50;
+  background-image: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(240,240,255,0.3));
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ecf0f1;
+  background-image: linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(20,20,40,0.3));
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+#darkModeToggle {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#darkModeToggle:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: #5dade2;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  background-color: #3498db;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+body.dark-mode h1 {
+  color: #ecf0f1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+li {
+  margin-bottom: 40px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-mode li {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: transform 0.5s;
+  transform: translateX(-100%);
+}
+
+li:hover::before {
+  transform: translateX(100%);
+}
+
+li b {
+  font-size: 1.2rem;
+  color: #3498db;
+  display: block;
+  margin-bottom: 15px;
+}
+
+body.dark-mode li b {
+  color: #5dade2;
+}
+
+li img {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 5/3;
+  display: block;
+  margin: 25px auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+li div p {
+  text-align: center;
+}
+
+li img:hover {
+  transform: scale(1.02);
+}
+
+li div {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  #darkModeToggle {
+    position: static;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    width: calc(100% - 30px);
+    margin: 10px 15px 20px;
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+  }
+
+  li {
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  li:hover {
+    transform: translateY(-2px);
+  }
+
+  li b {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  li div {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  li img {
+    max-width: 100%;
+    margin: 15px auto;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  footer {
+    padding: 20px 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+  }
+
+  li img {
+    height: 150px;
+    border-radius: 8px;
+  }
+
+  footer h2 {
+    font-size: 1.2rem;
+  }
+}
